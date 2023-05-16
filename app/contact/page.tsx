@@ -1,7 +1,26 @@
-import React from "react";
+"use client";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+
+import Header from "../components/Header";
 
 const Contact = () => {
-  return <div>Contact Page</div>;
+  const router = useRouter();
+  return (
+    <div>
+      <h1>Contact Page</h1>
+      <div>
+        <Link href="/">Home Page</Link>
+        <div>
+          <Link href={`/blog/asdfadfd`}>Post</Link>
+        </div>
+        <div>
+          <button onClick={() => router.push("/")}>Click Me!</button>
+        </div>
+      </div>
+      <Header />
+    </div>
+  );
 };
 
 export default Contact;
